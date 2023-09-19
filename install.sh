@@ -1,3 +1,4 @@
+#!/bin/bash
 name="gitff"
 path="$HOME/scripts"
 
