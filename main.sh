@@ -26,12 +26,13 @@ The following commands will be run:
 
 $commandsTxt
 " && echo "Running commands" \
-&& gum spin --show-output --spinner jump --title "git fetch --all" git fetch --all \
-&& gum spin --show-output --spinner jump --title "git checkout $from" git fetch --all\
-&& gum spin --show-output --spinner jump --title "git rebase origin/$to" git fetch --all\
-&& gum spin --show-output --spinner jump --title "git push --force" git fetch --all\
-&& gum spin --show-output --spinner jump --title "git checkout $to" git fetch --all\
-&& gum spin --show-output --spinner jump --title "git merge $from --ff-only" git fetch --all\
-&& gum spin --show-output --spinner jump --title "git push" git push
+&& gum spin --show-output --spinner jump --title "git checkout $to" -- git checkout $to \
+&& gum spin --show-output --spinner jump --title "git fetch --all" -- git fetch --all \
+&& gum spin --show-output --spinner jump --title "git checkout $from" -- git checkout $from \
+&& gum spin --show-output --spinner jump --title "git rebase origin/$to" -- git rebase origin/$to \
+&& gum spin --show-output --spinner jump --title "git push --force" -- git push --force \
+&& gum spin --show-output --spinner jump --title "git checkout $to" -- git checkout $to \
+&& gum spin --show-output --spinner jump --title "git merge $from --ff-only" -- git merge $from --ff-only \
+&& gum spin --show-output --spinner jump --title "git push" -- git push
 
 echo "Done"
