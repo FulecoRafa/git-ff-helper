@@ -35,6 +35,7 @@ gum confirm "Install script on $path/$name?"
 
 echo "Installing in $path/$name"
 
+mkdir -p $path
 cp main.sh "$path/$name"
 
 check_path $path
