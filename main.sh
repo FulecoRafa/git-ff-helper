@@ -15,7 +15,7 @@ git checkout $to
 git fetch --all
 git checkout $from
 git rebase origin/$to
-git push --force
+git push --force-with-lease
 git checkout $to
 git merge $from --ff-only
 git push
@@ -30,7 +30,7 @@ $commandsTxt
 && gum spin --show-output --spinner jump --title "git fetch --all" -- git fetch --all \
 && gum spin --show-output --spinner jump --title "git checkout $from" -- git checkout $from \
 && gum spin --show-output --spinner jump --title "git rebase origin/$to" -- git rebase origin/$to \
-&& gum spin --show-output --spinner jump --title "git push --force" -- git push --force \
+&& gum spin --show-output --spinner jump --title "git push --force-with-lease" -- git push --force-with-lease \
 && gum spin --show-output --spinner jump --title "git checkout $to" -- git checkout $to \
 && gum spin --show-output --spinner jump --title "git merge $from --ff-only" -- git merge $from --ff-only \
 && gum spin --show-output --spinner jump --title "git push" -- git push
